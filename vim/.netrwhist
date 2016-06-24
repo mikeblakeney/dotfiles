@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/michael/Development/ActsTechnology/projects/singlecomm/frontend/app/components/forms/builder/directives'
+let g:netrw_dirhist_2='/Users/michael/Development/ActsTechnology/projects/singlecomm/frontend'
+let g:netrw_dirhist_3='/Users/michael/Development/ActsTechnology/projects/singlecomm/frontend/app/components/forms/builder/controllers'
+let g:netrw_dirhist_4='/Users/michael/Development/ActsTechnology/projects/singlecomm/frontend/app/components/forms/builder/templates/forms/slides'
+let g:netrw_dirhist_5='/Users/michael'
+let g:netrw_dirhist_6='/Users/michael/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_7='/Users/michael/.vim/bundle'
