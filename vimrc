@@ -11,6 +11,11 @@ call vundle#begin()
 " " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-rails'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -19,8 +24,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'wikitopian/hardmode'
 
 " " All of your Plugins must be added before the following line
@@ -81,4 +84,8 @@ set diffopt+=vertical
 " enable hardmode
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
-set tags=./tags
+set tags=./tags,tags;$HOME
+
+set grepprg=ack
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>
