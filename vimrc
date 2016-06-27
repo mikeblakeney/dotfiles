@@ -21,10 +21,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdTree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'wikitopian/hardmode'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,11 +79,9 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " fugitive should always do vertical diffs
 set diffopt+=vertical
 
-" enable hardmode
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-
 set tags=./tags,tags;$HOME
 
 set grepprg=ack
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 map <C-n> :cn<CR>
 map <C-m> :cp<CR>
