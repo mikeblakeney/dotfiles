@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -29,11 +29,6 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 
-let NERDTreeShowHidden=1
-
-map :E :NERDTreeToggle<CR>
-
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -45,6 +40,7 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_reuse_loc_lists = 0
 
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
@@ -55,14 +51,7 @@ set background=light
 colorscheme solarized
 
 set number
-let g:netrw_liststyle = 3
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
-
-" " YCM gives you popups and splits by default that some people might not
-" like, so these should tidy it up a bit for you.
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
 
 set laststatus=2
 let g:airline_powerline_fonts = 1
