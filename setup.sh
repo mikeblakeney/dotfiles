@@ -9,7 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc bash_profile vimrc vim zshrc oh-my-zsh tmux.conf"    # list of files/folders to symlink in homedir
+files="bashrc bash_profile vimrc vim zshrc oh-my-zsh tmux.conf, global_ignore"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -66,4 +66,7 @@ else
 fi
 }
 
-install_zsh   
+install_zsh
+
+# setup global git ignore with ctags file
+git config --global core.excludesfile $HOME/.global_ignore
