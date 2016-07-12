@@ -23,6 +23,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,8 +48,8 @@ let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 let g:syntastic_html_checkers = ['htmlhint']
 
 syntax enable
-set background=light
-colorscheme solarized
+set background=dark
+color slate
 
 set number
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
@@ -72,5 +73,10 @@ set tags=./tags,tags;$HOME
 
 set grepprg=ack
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-map <C-n> :cn<CR>
-map <C-m> :cp<CR>
+map <C-i> :cn<CR>
+map <C-o> :cp<CR>
+
+let vim_markdown_preview_hotkey='<C-m>'
+autocmd BufWritePre * StripWhitespace
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_temp_file=1
