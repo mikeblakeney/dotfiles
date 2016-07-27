@@ -14,8 +14,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rails'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -24,6 +22,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,3 +82,27 @@ let vim_markdown_preview_hotkey='<C-m>'
 autocmd BufWritePre * StripWhitespace
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_temp_file=1
+
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_key_list_select_completion = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_select_previous_completion = ['<C-k>', '<C-p', '<Up']
+
+set completeopt-=preview
+
+let g:SuperTabDefaultCompletionType='<C-n'
+let g:SuperTabCrMapping=0
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Where to look for snippets
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" Where to add new snippets via :UltiSnipsEdit
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
