@@ -5,3 +5,36 @@ if ($1) {
   $3
 }
 endsnippet
+
+snippet func "function (fun)"
+function ${1:function_name}(${2:argument}) {
+  ${VISUAL}$0
+}
+endsnippet
+
+snippet afunc "function (fun)"
+function(${1:argument}) {
+  ${VISUAL}$0
+}
+endsnippet
+
+snippet cl "console log"
+console.log(${1:message})
+endsnippet
+
+snippet factory "angular factory"
+angular.module('${1:module_name}')
+  .factory('${2:factory_name}', factory)
+
+factory.$inject = [${3:dependencies}]
+
+function factory(${4:dependencies }) {
+  var service = {
+	$5
+  }
+
+  ${VISUAL}$0
+
+  return service
+}
+endsnippet
