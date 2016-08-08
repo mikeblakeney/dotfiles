@@ -1,8 +1,14 @@
 #!/bin/bash
 
+
 INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 ssid=$(iwgetid $INTERFACE -r)
-strength_value=$(iwlist $INTERFACE scan | grep Quality | awk '{print $1}' | grep -o '[0-9][0-9]' | sed -n '1p')
 
-let "strength=$strength_value*100/70"
+# This script requires sudoers to have passwordless execution.
+# To do this, use visudo and add a line like this replacing michael
+# with your user name and the path to the script:
+# michael ALL=(root) NOPASSWD: /home/michael/dotfiles/wifi.sh
+strength_value=$(sudo ~/wifi.sh | grep "$INTERFACE" | awk '{print $3}')
+strength=$(echo "$strength_value*10/7" | bc )
+
 echo "$ssid @ $strength%"
