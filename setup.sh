@@ -31,6 +31,9 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# add i3 configuration
+ln -s $dir/i3 ~/.config/i3
+
 # Install all the vim plugins
 vim +PluginInstall +qall
 
