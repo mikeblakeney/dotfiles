@@ -1,2 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/michael/.config/gtk-3.0'
+let g:netrw_dirhist_2='/home/michael/.oh-my-zsh'
+let g:netrw_dirhist_3='/home/michael/.config/i3/scripts'
+let g:netrw_dirhist_4='/etc/lightdm/lightdm.conf.d'
+let g:netrw_dirhist_5='/home/michael/.config/i3'

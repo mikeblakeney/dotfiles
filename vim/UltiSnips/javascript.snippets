@@ -18,7 +18,7 @@ function(${1:argument}) {
 }
 endsnippet
 
-snippet cl "console log"
+snippet con "console log"
 console.log(${1:message})
 endsnippet
 
@@ -37,4 +37,14 @@ function factory(${4:dependencies }) {
 
   return service
 }
+endsnippet
+
+snippet it "unit test"
+it('${1:description}', () => {
+  $2
+});
+endsnippet
+
+snippet expectequal "expect to be equal"
+expect(${1:test}).to.be.equal(${2:expectation})
 endsnippet

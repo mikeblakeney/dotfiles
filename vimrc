@@ -46,7 +46,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_reuse_loc_lists = 0
 
 let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_checkers = ['htmlhint']
 
 syntax enable

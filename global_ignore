@@ -3,3 +3,4 @@ tags
 *.swo
 *.swa
 .tern-project
+*.swp

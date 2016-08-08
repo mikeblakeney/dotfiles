@@ -80,8 +80,5 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export ANDROID_HOME=/Users/michael/Development/ActsTechnology/android
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-for config (~/.dev.config/**/*.zsh) source $config
+#for config (~/.dev.config/**/*.zsh) source $config
 
