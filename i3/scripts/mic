@@ -1,0 +1,10 @@
+#!/bin/bash
+
+status=$( amixer get Capture | tail -n 1 | grep -wo "on" )
+
+if [[ $status == "on" ]]
+then
+  echo ""
+else
+  echo ""
+fi

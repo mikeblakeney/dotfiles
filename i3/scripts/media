@@ -1,0 +1,26 @@
+#!/bin/bash
+
+ICON_PLAY=""
+ICON_STOP=""
+ICON_PAUSE=""
+
+PLAYER_ICON=""
+
+PLAYER_STATUS=$(playerctl status)
+
+MEDIA_TITLE=$(playerctl metadata title)
+MEDIA_ARTIST=$(playerctl metadata artist)
+
+if [[ $PLAYER_STATUS == "Paused" ]]
+then
+  PLAYER_ICON="${ICON_PAUSE}"
+elif [[ $PLAYER_STATUS == "Playing" ]]
+then
+ PLAYER_ICON="${ICON_PLAY}"
+else
+  PLAYER_ICON="${ICON_PAUSE}"
+fi
+
+if [[ "${MEDIA_TITLE}" != "" ]] && [[ "${MEDIA_ARTIST}" != "" ]]; then
+  echo "${PLAYER_ICON} ${MEDIA_ARTIST} - ${MEDIA_TITLE}"
+fi

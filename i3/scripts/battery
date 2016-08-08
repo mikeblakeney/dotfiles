@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+BATTERY=$( acpi -b | grep "Battery ${BLOCK_INSTANCE}")
+BATTERY_STATUS=$( echo $BATTERY | grep -wo "Charging\|Discharging\|Full" )
+BATTERY_POWER=$( echo $BATTERY | grep -o '[0-9]\+%' | tr -d '%')
+
+
+CRITICAL_VALUE=15
+
+STATUS_COLOR=#FFFFFF
+
+if [[ $BATTERY_POWER -lt $CRITICAL_VALUE ]]
+then
+  STATUS_COLOR=#FF0000
+fi
+
+if [[ $BATTERY_STATUS == "Charging" ]]
+then
+  echo "<span foreground=\"${STATUS_COLOR}\"> ${BATTERY_POWER}%</span>"
+elif [[ $BATTERY_STATUS == "Discharging" ]]
+then
+  echo "<span foreground=\"${STATUS_COLOR}\">⚡ ${BATTERY_POWER}%</span>"
+else
+  echo "<span foreground=\"${STATUS_COLOR}\"></span>"
+fi

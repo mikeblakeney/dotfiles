@@ -1,0 +1,8 @@
+#!/bin/bash
+
+INTERFACE="${BLOCK_INSTANCE:-wlan0}"
+ssid=$(iwgetid $INTERFACE -r)
+strength_value=$(iwlist $INTERFACE scan | grep Quality | awk '{print $1}' | grep -o '[0-9][0-9]' | sed -n '1p')
+
+let "strength=$strength_value*100/70"
+echo "$ssid @ $strength%"

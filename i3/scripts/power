@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+BATTERY=$( acpi -b | grep "Battery ${BLOCK_INSTANCE}")
+BATTERY_STATUS=$( echo $BATTERY | grep -wo "Charging\|Discharging\|Full" )
+BATTERY_POWER=$( echo $BATTERY | grep -o '[0-9]\+%' | tr -d '%')
+
+
+CRITICAL_VALUE=20
+
+
+if [[ $BATTERY_STATUS == "Charging" ]]
+then
+  echo "${BATTERY_POWER}%+"
+elif [[ $BATTERY_STATUS == "Discharging" ]]
+then
+  echo "${BATTERY_POWER}%-"
+else
+  echo "$BATTERY_POWER}%"
+fi
