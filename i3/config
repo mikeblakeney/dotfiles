@@ -200,7 +200,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+m exec amixer -q sset Capture toggle
 
-exec_always --no-startup-id feh --bg-fill /home/michael/Pictures/SAM_1636.JPG
+exec_always --no-startup-id feh --bg-fill /home/michael/Pictures/background.jpg
 exec_always --no-startup-id /home/michael/.screenlayout/multiscreen.sh
 
 exec --no-startup-id compton -f
