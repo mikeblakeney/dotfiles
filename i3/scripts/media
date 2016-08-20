@@ -22,5 +22,6 @@ else
 fi
 
 if [[ "${MEDIA_TITLE}" != "" ]] && [[ "${MEDIA_ARTIST}" != "" ]]; then
-  echo "${PLAYER_ICON} ${MEDIA_ARTIST} - ${MEDIA_TITLE}"
+  #echo "${PLAYER_ICON} ${MEDIA_ARTIST} - ${MEDIA_TITLE}"
+  echo "${PLAYER_ICON}"
 fi

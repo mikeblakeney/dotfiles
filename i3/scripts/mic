@@ -1,8 +1,15 @@
 #!/bin/bash
 
-status=$( amixer get Capture | tail -n 1 | grep -wo "on" )
+headset=$( cat /proc/asound/cards | grep Headset | head -n1 | awk '{print $1}')
+if [[ $headset ]]
+then
+  status=$( amixer -c $headset get Mic | tail -n 1 | grep -wo "Capture.*\[on\]" )
+else
+  status=$( amixer get Capture | tail -n 1 | grep -wo "Capture.*\[on\]" )
+fi
 
-if [[ $status == "on" ]]
+
+if [[ $status ]]
 then
   echo ""
 else

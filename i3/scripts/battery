@@ -22,5 +22,5 @@ elif [[ $BATTERY_STATUS == "Discharging" ]]
 then
   echo "<span foreground=\"${STATUS_COLOR}\">⚡ ${BATTERY_POWER}%</span>"
 else
-  echo "<span foreground=\"${STATUS_COLOR}\"></span>"
+  echo "<span foreground=\"#00CD00\"></span>"
 fi
