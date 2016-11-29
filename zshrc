@@ -82,3 +82,5 @@ fi
 
 #for config (~/.dev.config/**/*.zsh) source $config
 
+alias dc=docker-compose
+

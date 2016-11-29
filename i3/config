@@ -209,9 +209,13 @@ bindsym $mod+p exec gnome-screenshot -a -f ~/Desktop/screen.jpg
 # disable the touchpad tap to click
 exec --no-startup-id synclient MaxTapTime=0
 
+# disable red light in audio jack
+exec_always amixer set IEC958,16 off
+
 exec_always --no-startup-id feh --bg-max /home/michael/Pictures/background.jpg
 exec_always --no-startup-id /home/michael/.screenlayout/multiscreen.sh
 
 exec --no-startup-id compton -f
 exec --no-startup-id ~/startup.sh
+
 

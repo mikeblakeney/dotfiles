@@ -6,7 +6,7 @@ if [[ $headset ]]
 then
   amixer -c $headset -q sset Headphone,0 3%-
 else
-  amixer -c 0 -q sset Master,0 3%-
+  amixer set Master 3%-
 fi
 
 
