@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$(npm bin):/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin"
 
+export PATH="/home/michael/.local/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

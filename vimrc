@@ -24,6 +24,9 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mileszs/ack.vim'
 Plugin 'skwp/greplace.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -89,17 +92,25 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_aggregate_errors = 1
 
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_error_symbol = "X"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_error_symbol = "~"
+let g:syntastic_style_warning_symbol = ">"
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
+
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_reuse_loc_lists = 0
+
+let g:tsuquyomi_disable_quickfix = 1
 
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_checkers = ['htmlhint']
+let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
 
 "---- Airline Settings ----"
 set laststatus=2
@@ -122,9 +133,9 @@ nmap <C-e> :CtrlPMRUFiles<cr>
 
 "---- UltiSnips Settings----"
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<cr>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Where to look for snippets
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
@@ -139,13 +150,23 @@ let g:UltiSnipsEditSplit="vertical"
 set grepprg=ack
 let g:grep_cmd_opts="--no-heading"
 
+" ---- YouCompleteMe ----"
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_select_previous_completion = ['<C-p', '<Up']
+
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+set completeopt-=preview
+
+
+" ---- Remove Whitespace on save ----"
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
 " Notes and Tips"
 " - Press 'zz' to center screen on the cursor"
 
-"---- Laravel Specific ----"
-
-" quickly jump to routes file
-nmap <Leader>lr :e app/Http/routes.php
-
-" php artisan make
-nmap <Leader>la :!php artisan make: 

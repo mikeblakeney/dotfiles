@@ -1,6 +1,6 @@
-tags
 .DS_Store
 *.swo
 *.swa
 .tern-project
 *.swp
+.idea/
