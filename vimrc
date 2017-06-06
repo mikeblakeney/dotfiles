@@ -2,37 +2,30 @@ set nocompatible
 filetype off
 
 
-"------------- Vundler ---------------"
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
-Plugin 'skwp/greplace.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-unimpaired'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'mileszs/ack.vim'
+Plug 'skwp/greplace.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 " " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 
 filetype plugin indent on    " required
-
 
 
 "---- General Settings ----"
@@ -63,7 +56,6 @@ set tags=./tags,tags;$HOM
 "---- Split Management
 set splitbelow
 set splitright
-nmap <C-J> <C-W><C-J>
 
 
 "----Mappings----"
@@ -111,6 +103,12 @@ let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_checkers = ['htmlhint']
 let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
+
+"---- Tsuquyomi (Typescript fanciness) ----"
+nmap <Leader>i :TsuImport<cr>
+nmap <Leader>d :TsuDefinition<cr>
+nmap <Leader>r :TsuReferences<cr>
+
 
 "---- Airline Settings ----"
 set laststatus=2
