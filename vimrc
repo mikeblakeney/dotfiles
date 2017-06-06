@@ -1,8 +1,8 @@
 set nocompatible
 filetype off
 
-
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-unimpaired'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-fugitive'
@@ -18,15 +18,13 @@ Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'mileszs/ack.vim'
 Plug 'skwp/greplace.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-
-" " All of your Plugins must be added before the following line
+Plug 'airblade/vim-gitgutter'
 call plug#end()            " required
 
 filetype plugin indent on    " required
-
 
 "---- General Settings ----"
 syntax enable
