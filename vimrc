@@ -86,8 +86,8 @@ let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_error_symbol = "X"
 let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_error_symbol = "~"
-let g:syntastic_style_warning_symbol = ">"
+let g:syntastic_style_error_symbol = ">"
+let g:syntastic_style_warning_symbol = "#"
 
 let g:syntastic_always_populate_loc_list = 1
 
@@ -98,9 +98,15 @@ let g:syntastic_reuse_loc_lists = 0
 let g:tsuquyomi_disable_quickfix = 1
 
 let g:syntastic_json_checkers = ['jsonlint']
+
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = '/bin/ls'
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+
 let g:syntastic_html_checkers = ['htmlhint']
 let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
+
+" let g:syntastic_debug = 3
 
 "---- Tsuquyomi (Typescript fanciness) ----"
 nmap <Leader>i :TsuImport<cr>

@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda-mod"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,13 +45,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial osx aws bower jsontools npm sublime)
+plugins=(git aws bower npm dotenv pip docker docker-compose pass ssh-agent tmux web-search zsh-reload battery command-not-found common-aliases composer copybuffer encode64)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$(npm bin):/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin"
+export PATH="$(npm bin):/usr/local/bin:/usr/local/share/python:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin"
 
 export PATH="/home/michael/.local/bin:$PATH"
 
@@ -71,7 +71,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH=~/.ssh/id_rsa
+export SSH_KEY_PATH=~/.ssh/id_rsa
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,5 +84,4 @@ fi
 
 #for config (~/.dev.config/**/*.zsh) source $config
 
-alias dc=docker-compose
 
