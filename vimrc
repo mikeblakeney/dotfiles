@@ -22,13 +22,15 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-co
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()            " required
 
 filetype plugin indent on    " required
 
 "---- General Settings ----"
 syntax enable
-colorscheme slate "atom-dark
+set background=dark
+colorscheme solarized "atom-dark
 
 let mapleader=','
 set backspace=indent,eol,start
